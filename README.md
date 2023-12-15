@@ -58,6 +58,27 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Packages and dependencies
+
+# prisma dev dependencies
+$ npm install prisma --save-dev
+
+# check prisma command
+$ npx prisma
+
+# Prisma initialization
+$ npx prisma init
+
+# Prisma client
+$ npm i @prisma/client 
+
+# Create prisma migration
+$ npx prisma migrate dev --name init
+
+# Prima client
+$ npx prisma studio
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
