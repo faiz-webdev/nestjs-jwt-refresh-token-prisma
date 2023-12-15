@@ -91,6 +91,9 @@ $ npx prisma studio
 
   #
   $npm install --save-dev @types/passport-jwt
+
+  #
+  $ npm i --save @nestjs/passport passport
   
   
 
