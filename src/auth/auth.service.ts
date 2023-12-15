@@ -28,7 +28,6 @@ export class AuthService {
   }
 
   async singinLocal(dto: AuthDto): Promise<Tokens> {
-console.log(dto)
     const user = await this.prisma.user.findUnique({
       where: {
         email: dto.email,
@@ -50,7 +49,19 @@ console.log(dto)
     return tokens;
   }
 
-  logout() {}
+  async logout(userId: number) {
+    await this.prisma.user.updateMany({
+      where: {
+        id: userId,
+        hashedRt: {
+          not: null,
+        },
+      },
+      data: {
+        hashedRt: null,
+      },
+    });
+  }
 
   refreshTokens() {}
 
