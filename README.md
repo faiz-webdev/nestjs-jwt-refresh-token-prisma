@@ -75,8 +75,24 @@ $ npm i @prisma/client
 # Create prisma migration
 $ npx prisma migrate dev --name init
 
+#Validattion package
+$ npm i --save class-validator class-transformer
+
 # Prima client
 $ npx prisma studio
+
+# Password bcrypt
+ $ npm i -D @types/bcrypt
+ #
+ $ npm i bcrypt
+
+ # Jwt package
+ $ npm install --save @nestjs/jwt passport-jwt
+
+  #
+  $npm install --save-dev @types/passport-jwt
+  
+  
 
 
 ## Support
