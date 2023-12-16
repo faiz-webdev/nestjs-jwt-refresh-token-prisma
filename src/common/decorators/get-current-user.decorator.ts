@@ -6,6 +6,7 @@ export const GetCurrentUser = createParamDecorator(
 
     if (!data) return request.user;
 
-    return request.user['refreshToken'];
+    // return request.user['refreshToken'];
+    return request.user[data];
   },
 );
