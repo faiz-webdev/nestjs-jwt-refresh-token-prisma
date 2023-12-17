@@ -94,6 +94,9 @@ $ npx prisma studio
 
   #
   $ npm i --save @nestjs/passport passport
+
+  # Config service
+  $ npm i --save @nestjs/config
   
   
 
