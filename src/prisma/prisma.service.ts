@@ -27,10 +27,11 @@ export class PrismaService
     await this.$disconnect();
   }
 
-  //   async cleanDatabase() {
-  //     if (process.env.NODE_ENV === 'production') return;
+  async cleanDatabase() {
+    console.log('clean database');
+    // if (process.env.NODE_ENV === 'production') return;
 
-  //     // teardown logic
-  //     return Promise.all([this.user.deleteMany()]);
-  //   }
+    // teardown logic
+    // return Promise.all([this.user.deleteMany()]);
+  }
 }

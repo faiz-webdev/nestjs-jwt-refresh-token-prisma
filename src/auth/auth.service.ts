@@ -1,4 +1,8 @@
-import { ForbiddenException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+} from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthDto } from './dto';
 import * as bcrypt from 'bcrypt';
@@ -13,6 +17,15 @@ export class AuthService {
   ) {}
 
   async singupLocal(dto: AuthDto): Promise<Tokens> {
+    const userExists = await this.prisma.user.findUnique({
+      where: {
+        email: dto.email,
+      },
+    });
+    if (userExists) {
+      throw new BadRequestException('User already exists! Please login');
+    }
+
     const hash = await this.hashedData(dto.password);
 
     const newUser = await this.prisma.user.create({
